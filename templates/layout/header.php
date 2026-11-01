@@ -20,8 +20,8 @@ $paginaActual = $_GET['action'] ?? 'inicio';
     <div class="header-inner">
         <!-- Logo y Nombre del Proyecto -->
         <a href="/index.php?action=inicio" class="logo-brand">
-            <div class="logo-icon" style="background:none; padding:0; width:48px; height:48px; overflow:hidden;">
-                <img src="/img/logo_app.jpg" alt="Logo Baloncesto YOLO" style="width:48px; height:48px; object-fit:contain; border-radius:50%;">
+            <div class="logo-icon" style="background:none; padding:0; width:48px; height:48px; overflow:hidden; border-radius:50%; box-shadow:0 2px 8px rgba(0,0,0,0.2); border: 2px solid var(--color-primary);">
+                <img src="/img/logo_app.png" alt="Logo Baloncesto YOLO" style="width:100%; height:100%; object-fit:cover; display:block;">
             </div>
             <div class="logo-text">
                 <h1>Baloncesto YOLO</h1>

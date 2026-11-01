@@ -37,8 +37,8 @@
         <div class="role-card">
             <span class="role-card-badge">Jugadores</span>
             <div>
-                <div class="role-card-icon" style="background:none; padding:0; display:flex; justify-content:center; align-items:center;">
-                    <img src="/img/deportista_icono.png" alt="Deportista" style="width:90px; height:90px; object-fit:contain;">
+                <div class="role-card-icon" style="background:none; padding:0; display:flex; justify-content:center; align-items:center; margin-bottom: 1rem;">
+                    <img src="/img/deportista_icono.png" alt="Deportista" style="width:110px; height:110px; border-radius:50%; object-fit:cover; box-shadow:0 6px 16px rgba(232,99,10,0.25); border:3px solid var(--color-primary); transition: transform 0.2s ease;">
                 </div>
                 <h4 class="role-card-title">Soy Deportista</h4>
                 <p class="role-card-desc">
@@ -59,8 +59,8 @@
         <div class="role-card">
             <span class="role-card-badge">Cuerpo Técnico</span>
             <div>
-                <div class="role-card-icon" style="background:none; padding:0; display:flex; justify-content:center; align-items:center;">
-                    <img src="/img/entrenador_icono.jpg" alt="Entrenador" style="width:90px; height:90px; object-fit:contain;">
+                <div class="role-card-icon" style="background:none; padding:0; display:flex; justify-content:center; align-items:center; margin-bottom: 1rem;">
+                    <img src="/img/entrenador_icono.png" alt="Entrenador" style="width:110px; height:110px; border-radius:50%; object-fit:cover; box-shadow:0 6px 16px rgba(26,26,26,0.25); border:3px solid var(--color-dark); transition: transform 0.2s ease;">
                 </div>
                 <h4 class="role-card-title">Soy Entrenador</h4>
                 <p class="role-card-desc">
