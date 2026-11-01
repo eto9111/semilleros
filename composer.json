@@ -1,0 +1,14 @@
+{
+    "name": "cesmag/baloncesto-yolo",
+    "description": "Sistema de apoyo postural para baloncesto infantil - Semillero FOCUS (Universidad CESMAG)",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}

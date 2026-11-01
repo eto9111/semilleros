@@ -1,0 +1,98 @@
+[
+  {
+    "id": "inicio",
+    "titulo": "Inicio del Proyecto",
+    "descripcion": "Presentación general del proyecto de semillero FOCUS Universidad CESMAG",
+    "ruta": "/index.php?action=inicio",
+    "palabras_clave": ["inicio", "home", "bienvenida", "cesmag", "focus", "proyecto", "baloncesto"],
+    "rol_permitido": "todos"
+  },
+  {
+    "id": "solucion",
+    "titulo": "La Solución Técnica",
+    "descripcion": "Problema, objetivos, integración con YOLO, alcance y limitaciones",
+    "ruta": "/index.php?action=solucion",
+    "palabras_clave": ["solucion", "objetivo", "yolo", "vision artificial", "metodologia", "alcance", "limitaciones", "problema"],
+    "rol_permitido": "todos"
+  },
+  {
+    "id": "privacidad",
+    "titulo": "Privacidad y Tratamiento de Datos",
+    "descripcion": "Protección de menores, Ley 1581 de 2012, Resolución 8430 de 1993 y derechos",
+    "ruta": "/index.php?action=privacidad",
+    "palabras_clave": ["privacidad", "datos", "habeas data", "ley 1581", "resolucion 8430", "menores", "etica", "acudiente", "eliminar datos"],
+    "rol_permitido": "todos"
+  },
+  {
+    "id": "ingreso_deportista",
+    "titulo": "Acceso Deportista",
+    "descripcion": "Iniciar sesión o registrarse como deportista en formación",
+    "ruta": "/index.php?action=login_deportista",
+    "palabras_clave": ["ingreso deportista", "login deportista", "cuenta nino", "jugador", "registro deportista"],
+    "rol_permitido": "anonimo"
+  },
+  {
+    "id": "ingreso_entrenador",
+    "titulo": "Acceso Entrenador",
+    "descripcion": "Iniciar sesión o registrarse como entrenador formativo",
+    "ruta": "/index.php?action=login_entrenador",
+    "palabras_clave": ["ingreso entrenador", "login entrenador", "profesor", "coach", "registro entrenador"],
+    "rol_permitido": "anonimo"
+  },
+  {
+    "id": "panel_deportista",
+    "titulo": "Mi Panel de Deportista",
+    "descripcion": "Resumen de mis técnicas, progreso y recomendaciones del entrenador",
+    "ruta": "/index.php?action=deportista_panel",
+    "palabras_clave": ["panel", "dashboard", "mis datos", "mi progreso", "mi entrenador", "resumen"],
+    "rol_permitido": "deportista"
+  },
+  {
+    "id": "nueva_medicion",
+    "titulo": "Nueva Medición Postural",
+    "descripcion": "Registrar medición manual de lanzamiento, defensa o drible inicial",
+    "ruta": "/index.php?action=deportista_medicion",
+    "palabras_clave": ["nueva medicion", "registrar medicion", "postura", "ingresar datos", "lanzamiento", "defensa", "drible inicial"],
+    "rol_permitido": "deportista"
+  },
+  {
+    "id": "historial_deportista",
+    "titulo": "Historial y Gráficas de Postura",
+    "descripcion": "Evolución histórica y gráficas por variable postural",
+    "ruta": "/index.php?action=deportista_historial",
+    "palabras_clave": ["historial", "graficas", "evolucion", "seguimiento", "curva de mejora", "estadisticas"],
+    "rol_permitido": "deportista"
+  },
+  {
+    "id": "panel_entrenador",
+    "titulo": "Panel del Entrenador",
+    "descripcion": "Gestión de deportistas asignados, observaciones y seguimiento",
+    "ruta": "/index.php?action=entrenador_panel",
+    "palabras_clave": ["panel entrenador", "mis deportistas", "alumnos", "estudiantes", "seguimiento postural"],
+    "rol_permitido": "entrenador"
+  },
+  {
+    "id": "tecnica_lanzamiento",
+    "titulo": "Técnica: Lanzamiento (Tiro)",
+    "descripcion": "Variables: flexión rodillas, codo, brazo, muñeca y base de apoyo",
+    "ruta": "/index.php?action=solucion#lanzamiento",
+    "palabras_clave": ["lanzamiento", "tiro", "mecanica de tiro", "codo", "muneca", "extension", "rodillas"],
+    "rol_permitido": "todos"
+  },
+  {
+    "id": "tecnica_defensa",
+    "titulo": "Técnica: Postura Defensiva",
+    "descripcion": "Variables: separación de pies, flexión rodillas/caderas, inclinación tronco, manos",
+    "ruta": "/index.php?action=solucion#defensa",
+    "palabras_clave": ["defensa", "postura defensiva", "separacion de pies", "tronco", "manos defensivas"],
+    "rol_permitido": "todos"
+  },
+  {
+    "id": "tecnica_drible",
+    "titulo": "Técnica: Drible Inicial",
+    "descripcion": "Variables: flexión rodillas, inclinación tronco, balón al costado, bote, cabeza",
+    "ruta": "/index.php?action=solucion#drible",
+    "palabras_clave": ["drible", "dribling", "bote", "bote inicial", "control de balon", "cabeza levantada"],
+    "rol_permitido": "todos"
+  }
+]

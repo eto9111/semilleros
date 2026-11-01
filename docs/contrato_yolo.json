@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ContratoYOLO_BaloncestoPostura",
+  "description": "Especificación JSON de intercambio de datos entre el modelo YOLO Pose / Vision AI y la plataforma web de semillero FOCUS (Universidad CESMAG).",
+  "version": "1.0.0",
+  "ejemplo": {
+    "metadata": {
+      "deportista_id": 2,
+      "fecha": "2026-10-31 16:30:00",
+      "tecnica": "lanzamiento",
+      "modelo_version": "YOLOv8n-pose-basketball-v1",
+      "dispositivo_captura": "camara_lateral_1080p",
+      "fps": 30,
+      "confianza_general": 0.94
+    },
+    "puntos_clave": {
+      "nariz": { "x": 512, "y": 140, "confianza": 0.98 },
+      "hombro_derecho": { "x": 480, "y": 230, "confianza": 0.95 },
+      "codo_derecho": { "x": 470, "y": 320, "confianza": 0.93 },
+      "muneca_derecha": { "x": 465, "y": 410, "confianza": 0.91 },
+      "cadera_derecha": { "x": 490, "y": 520, "confianza": 0.94 },
+      "rodilla_derecha": { "x": 500, "y": 700, "confianza": 0.96 },
+      "tobillo_derecho": { "x": 505, "y": 890, "confianza": 0.97 },
+      "hombro_izquierdo": { "x": 540, "y": 232, "confianza": 0.92 },
+      "codo_izquierdo": { "x": 560, "y": 325, "confianza": 0.89 },
+      "muneca_izquierda": { "x": 570, "y": 405, "confianza": 0.88 },
+      "cadera_izquierda": { "x": 530, "y": 525, "confianza": 0.93 },
+      "rodilla_izquierda": { "x": 535, "y": 705, "confianza": 0.95 },
+      "tobillo_izquierdo": { "x": 540, "y": 895, "confianza": 0.96 }
+    },
+    "variables_calculadas": {
+      "flexion_rodillas": {
+        "angulo_grados": 115.4,
+        "unidad": "grados",
+        "confianza": 0.95,
+        "estado": "adecuada"
+      },
+      "alineacion_codo": {
+        "angulo_grados": 89.2,
+        "unidad": "grados",
+        "confianza": 0.93,
+        "estado": "adecuada"
+      },
+      "extension_brazo": {
+        "angulo_grados": 168.0,
+        "unidad": "grados",
+        "confianza": 0.91,
+        "estado": "por corregir"
+      },
+      "seguimiento_muneca": {
+        "angulo_grados": 58.5,
+        "unidad": "grados",
+        "confianza": 0.89,
+        "estado": "adecuada"
+      },
+      "estabilidad_base": {
+        "separacion_pies_cm": 42.0,
+        "unidad": "cm",
+        "confianza": 0.94,
+        "estado": "adecuada"
+      }
+    },
+    "resumen": {
+      "puntos_detectados": 13,
+      "puntos_totales": 17,
+      "estado_captura": "completa_sin_oclusiones"
+    }
+  }
+}
