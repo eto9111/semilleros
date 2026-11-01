@@ -84,19 +84,11 @@ class Database
     private static function autoMigrar(PDO $pdo): void
     {
         try {
-            $check = $pdo->query("SELECT to_regclass('public.usuarios')");
+            $check = $pdo->query("SELECT to_regclass('public.usuario')");
             if ($check->fetchColumn() === null) {
                 $schemaFile = dirname(__DIR__) . '/database/schema.sql';
                 if (file_exists($schemaFile)) {
                     $pdo->exec(file_get_contents($schemaFile));
-                }
-
-                $seedFile = dirname(__DIR__) . '/database/seed_demo.php';
-                if (file_exists($seedFile)) {
-                    // Cargar seed demo silenciando la salida
-                    ob_start();
-                    include_once $seedFile;
-                    ob_end_clean();
                 }
             }
         } catch (\Throwable $e) {
