@@ -50,11 +50,11 @@ class Database
         if (self::$instance === null) {
             self::loadEnv();
 
-            $host = $_ENV['DB_HOST'] ?? 'localhost';
-            $port = $_ENV['DB_PORT'] ?? '5432';
-            $dbname = $_ENV['DB_NAME'] ?? 'baloncesto_yolo';
-            $user = $_ENV['DB_USER'] ?? 'postgres';
-            $pass = $_ENV['DB_PASS'] ?? '1';
+            $host = $_ENV['DB_HOST'] ?? getenv('DB_HOST') ?: 'localhost';
+            $port = $_ENV['DB_PORT'] ?? getenv('DB_PORT') ?: '5432';
+            $dbname = $_ENV['DB_NAME'] ?? getenv('DB_NAME') ?: 'baloncesto_yolo';
+            $user = $_ENV['DB_USER'] ?? getenv('DB_USER') ?: 'postgres';
+            $pass = $_ENV['DB_PASS'] ?? getenv('DB_PASS') ?: '1';
 
             $dsn = "pgsql:host={$host};port={$port};dbname={$dbname};options='--client_encoding=UTF8'";
 
@@ -64,12 +64,43 @@ class Database
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                     PDO::ATTR_EMULATE_PREPARES => false,
                 ]);
+
+                // Auto-migración automática si la base de datos está vacía
+                self::autoMigrar(self::$instance);
+
             } catch (PDOException $e) {
-                // Mensaje claro para depuración local
+                // Mensaje claro para depuración
                 die("Error de conexión a la base de datos PostgreSQL: " . htmlspecialchars($e->getMessage()));
             }
         }
 
         return self::$instance;
+    }
+
+    /**
+     * Si no existen las tablas (por ejemplo, en el primer despliegue en Render),
+     * ejecuta automáticamente schema.sql y los datos DEMO.
+     */
+    private static function autoMigrar(PDO $pdo): void
+    {
+        try {
+            $check = $pdo->query("SELECT to_regclass('public.usuarios')");
+            if ($check->fetchColumn() === null) {
+                $schemaFile = dirname(__DIR__) . '/database/schema.sql';
+                if (file_exists($schemaFile)) {
+                    $pdo->exec(file_get_contents($schemaFile));
+                }
+
+                $seedFile = dirname(__DIR__) . '/database/seed_demo.php';
+                if (file_exists($seedFile)) {
+                    // Cargar seed demo silenciando la salida
+                    ob_start();
+                    include_once $seedFile;
+                    ob_end_clean();
+                }
+            }
+        } catch (\Throwable $e) {
+            error_log("Error en auto-migración: " . $e->getMessage());
+        }
     }
 }
